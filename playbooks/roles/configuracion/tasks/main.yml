@@ -1,0 +1,8 @@
+---
+# tasks file for configuracion
+- name: Configurar Reverse Proxy
+  template:
+    src: reverse_proxy.j2
+    dest: /etc/httpd/conf.d/web-server.conf
+  notify: reinicio httpd        
+...

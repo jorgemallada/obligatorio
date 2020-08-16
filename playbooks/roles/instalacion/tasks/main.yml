@@ -1,0 +1,9 @@
+---
+# tasks file for instalacion
+ - name: Instalacion de paquete
+   yum:
+     name: '{{ paquetes }}'
+     state: present
+       
+   notify: restart httpd  
+...

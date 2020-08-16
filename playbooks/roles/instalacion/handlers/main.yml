@@ -1,0 +1,10 @@
+---
+# handlers file for instalacion
+
+ - name: restart httpd 
+   service:
+     name: httpd
+     state: reloaded
+     enabled: yes
+
+...      

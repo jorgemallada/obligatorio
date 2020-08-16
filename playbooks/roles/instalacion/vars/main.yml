@@ -1,0 +1,7 @@
+---
+# vars file for instalacion
+
+ paquetes:
+   - httpd
+
+...     
