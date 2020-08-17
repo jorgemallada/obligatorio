@@ -4,6 +4,6 @@
    yum:
      name: '{{ paquetes }}'
      state: present
-       
-   notify: restart httpd  
+   notify: restart httpd
+   when: (ansible_facts['distribution'] == "CentOS")  
 ...

@@ -1,0 +1,40 @@
+---
+# tasks file for configuracion
+- name: Configurar Reverse Proxy
+  template:
+    src: reverse_proxy.j2
+    dest: /etc/httpd/conf.d/web-server.conf
+  notify: reinicio httpd  
+  when: (ansible_facts['distribution'] == "CentOS")
+
+- firewalld:
+    port: 443/tcp
+    permanent: yes
+    state: enabled
+  when: (ansible_facts['distribution'] == "CentOS")
+- firewalld:
+    port: 80/tcp
+    permanent: yes
+    state: enabled 
+  when: (ansible_facts['distribution'] == "CentOS") 
+
+- name: configurar apache2
+  template:
+    src: reverse_proxy.j2
+    dest: /etc/apache2/sites-available/web-server.conf    
+  notify: reinicio apache2
+  when: (ansible_facts['distribution'] == "Ubuntu")
+
+- ufw:
+    rule: allow
+    port: '80'
+    proto: tcp
+  when: (ansible_facts['distribution'] == "Ubuntu")
+
+- ufw:
+    rule: allow
+    port: '443'
+    proto: tcp
+  when: (ansible_facts['distribution'] == "Ubuntu")    
+...
+

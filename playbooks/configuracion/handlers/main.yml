@@ -1,0 +1,16 @@
+---
+# handlers file for configuracion
+- name: reinicio httpd
+  service:
+    name: httpd  
+    state: restarted
+    enabled: yes
+  when: (ansible_facts['distribution'] == "CentOS")
+
+- name: reinicio apache2
+  service:
+    name: apache2
+    state: restarted
+    enabled: yes
+  when: (ansible_facts['distribution'] == "Ubuntu")    
+...    

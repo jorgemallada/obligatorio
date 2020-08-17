@@ -1,0 +1,11 @@
+---
+# tasks file for instalacionUbuntu
+ - name: Instalacion de paquetes
+   apt:
+     name: '{{ paquetes }}'
+     state: present
+   notify: restart apache2  
+   when: (ansible_facts['distribution'] == "Ubuntu")   
+          
+
+...     

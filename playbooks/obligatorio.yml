@@ -1,6 +1,7 @@
 ---
 - hosts: Sv2
   roles:
-  - instalacion 
-  - configuracion 
+  - configuracion        
+  - instalacionCentos
+  - instalacionUbuntu  
 ...    
