@@ -20,7 +20,7 @@ Venezuelan Warrios aka Jorge Mallada
 Casquito "El CoronasV" Herguiz aka Martin Herguiz *caugh caugh*
 
 
-### Licence
+### Licensed
 
 [HASTA LA PROXIMA](https://www.youtube.com/watch?v=b8PxzPxI8Os)
 
