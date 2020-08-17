@@ -1,2 +1,9 @@
 ---
 # tasks file for firewall
+- name: abrir los puertos 
+  firewalld:
+    port: '{{ puertos }}'
+    permanent: yes
+    state: enabled
+
+...      

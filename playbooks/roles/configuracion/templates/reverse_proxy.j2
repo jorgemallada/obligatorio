@@ -1,11 +1,11 @@
 <VirtualHost *:80>
-<Proxy balancer://{{ servidores_proxy }}>
+<Proxy balancer://TallerObligatorio>
     BalancerMember {{ servidor_web }}:8080
     BalancerMember {{ servidor_web }}:8081
 </Proxy>
 
     ProxyPreserveHost On
 
-    ProxyPass / balancer://{{ servidores_proxy }}/
-    ProxyPassReverse / balancer://{{ servidores_proxy }}/
+    ProxyPass / balancer://TallerObligatorio/
+    ProxyPassReverse / balancer://TallerObligatorio/
 </VirtualHost>

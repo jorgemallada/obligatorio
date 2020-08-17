@@ -4,5 +4,15 @@
   template:
     src: reverse_proxy.j2
     dest: /etc/httpd/conf.d/web-server.conf
-  notify: reinicio httpd        
+  notify: reinicio httpd  
+
+- firewalld:
+    port: 443/tcp
+    permanent: yes
+    state: enabled
+
+- firewalld:
+    port: 80/tcp
+    permanent: yes
+    state: enabled 
 ...

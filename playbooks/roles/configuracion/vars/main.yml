@@ -1,6 +1,6 @@
 ---
 # vars file for configuracion
 
-servidor_web: 'http://192.168.1.9' 
+servidor_web: 'http://192.168.1.20' 
 servidores_proxy: '192.168.1.11'   
 ...     
